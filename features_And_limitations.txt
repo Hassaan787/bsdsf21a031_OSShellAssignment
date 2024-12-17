@@ -1,0 +1,130 @@
+
+## Version 1
+### Features
+1. **External Commands:** Available commands include ls, pwd, whoami, date, echo, etc.
+2. **Absolute and Relative Paths:** Programs can be executed by specifying their full paths (e.g., `/bin/ls` or `./my_program`).
+3. **Basic Error Feedback:** The shell provides error messages if a command isn’t found or if execvp fails.
+
+### Limitations
+1. **No Built-in Commands:** Lacks support for built-in commands like cd, etc., except for exit.
+2. **No Command History:** Unable to recall previously typed commands.
+3. **No I/O Redirection:** Commands like “ls > output.txt” won’t work; they require additional handling.
+4. **No Piping:** Commands with pipes, like `ls | grep txt`, are not supported.
+5. **No Background Execution:** Cannot run commands in the background by appending `&`.
+6. **No Signal Handling:** No signal management for stopping or terminating jobs (e.g., Ctrl+C).
+
+### Bugs
+None found.
+
+---
+
+## Version 2
+### Features
+1. **External Commands:** Supports executing external commands such as ls, pwd, whoami, date, echo, etc.
+2. **Absolute and Relative Paths:** Execute programs by specifying full paths (e.g., `/bin/ls` or `./my_program`).
+3. **Basic Error Feedback:** Displays error messages if a command isn’t found or execvp fails.
+4. **I/O Redirection:** Supports input and output redirection using `<` and `>` symbols (e.g., `ls > output.txt`).
+5. **Piping:** Allows single piping to use the output of one command as input to another (e.g., `ls | grep txt`).
+
+### Limitations
+1. **No Built-in Commands:** Only supports exit; lacks commands like cd and jobs.
+2. **No Command History:** Commands cannot be recalled once typed.
+3. **Single Piping Only:** Only handles a single `|` between two commands.
+4. **No Background Execution:** Cannot run commands in the background with `&`.
+5. **No Signal Handling:** Does not manage signals (e.g., Ctrl+C).
+6. **No Complex Redirection Combinations:** Advanced redirection patterns are unsupported.
+
+### Bugs
+None identified.
+
+---
+
+## Version 3
+### Features
+1. **External Commands:** Supports executing external commands (e.g., ls, pwd, whoami, date, echo, etc.).
+2. **Absolute and Relative Paths:** Programs can be executed by specifying their full paths (e.g., `/bin/ls` or `./my_program`).
+3. **Basic Error Feedback:** Displays error messages if a command isn’t found or execvp fails.
+4. **I/O Redirection:** Allows input and output redirection using `<` and `>` symbols.
+5. **Single Piping:** Supports single piping (e.g., `ls | grep txt`).
+6. **Background Execution:** Introduces support for running commands in the background using `&`.
+7. **Basic Signal Handling:** Includes basic signal handling for interrupting foreground jobs with Ctrl+C.
+
+### Limitations
+1. **No Command History:** Commands cannot be recalled once typed.
+2. **Single Piping Only:** Only handles a single `|` between two commands.
+3. **Limited Signal Handling:** Basic signals are managed, but more complex controls are not.
+4. **No Built-in Commands:** Only supports exit.
+5. **No Complex Redirection Combinations:** Advanced patterns with multiple `>`, `<`, or `|` are unsupported.
+
+### Bugs
+None identified.
+
+---
+
+## Version 4
+### Features
+1. **External Commands:** Supports external commands like ls, pwd, whoami, date, etc.
+2. **Absolute and Relative Paths:** Run programs by specifying full paths (e.g., `/bin/ls` or `./my_program`).
+3. **Basic Error Feedback:** Displays error messages if a command fails.
+4. **I/O Redirection:** Supports `<` and `>` for input/output redirection.
+5. **Single Piping:** Allows single `|` pipes between commands.
+6. **Command History:** Maintains a history of the last 10 commands.
+7. **Repeat Previous Commands:** Repeat commands by typing `!number` (e.g., `!1`).
+8. **Arrow Key Navigation:** Use up/down arrow keys to navigate the command history.
+
+### Limitations
+1. **No Advanced Built-in Commands:** Only supports exit and history.
+2. **Limited Command History:** Only the last 10 commands are stored.
+3. **Single Piping Only:** Does not support complex pipelines.
+4. **No Background Execution:** Cannot run commands in the background with `&`.
+5. **Basic Signal Handling:** Limited support for handling signals.
+
+---
+
+## Version 5
+### Features
+1. **External Commands:** Supports external commands like ls, pwd, whoami, etc., and both absolute and relative paths.
+2. **I/O Redirection:** Supports redirection using `<` and `>` symbols.
+3. **Piping:** Allows a single `|` pipe between commands.
+4. **Command History with Recall:** Maintains a history of the last 10 commands with support for `!number`.
+5. **Background Execution:** Supports running processes in the background with `&`.
+6. **Signal Handling and Process Control:** Can stop processes with Ctrl+C and supports basic signal handling.
+7. **Built-in Commands:** Includes basic commands like cd, exit, jobs, kill, and help.
+
+### Limitations
+1. **No Complex Pipelines:** Only supports a single pipe (`|`) between two commands.
+2. **Limited Redirection:** Advanced combinations of redirection and piping are unsupported.
+3. **Partial Signal Handling:** Basic signal handling; complex job control not implemented.
+4. **Background Process Limitations:** Limited job control for managing background processes.
+5. **Limited Built-in Command Set:** Only includes basic built-in commands.
+
+---
+
+## Version 6
+### Features
+1. **External Command Execution:** Runs external commands (e.g., ls, pwd, whoami) and supports absolute/relative paths.
+2. **Error Handling:** Displays errors for unknown commands or failed executions.
+3. **I/O Redirection:** Supports `<` and `>` for input and output redirection (e.g., `ls > output.txt`).
+4. **Piping:** Allows single piping (e.g., `ls | grep txt`).
+5. **Built-in Commands:**
+   - `cd`: Changes directories.
+   - `exit`: Exits the shell.
+   - `jobs`: Lists background jobs with PIDs.
+   - `kill`: Terminates a background job by PID.
+   - `help`: Lists built-in commands.
+   - `list_variables`: Lists user-defined variables.
+6. **Background Execution:** Allows commands to run in the background with `&`, displaying their PIDs.
+7. **Command History:** Stores the last 10 commands and supports `!number` for re-executing commands.
+8. **Variable Management:** Supports user-defined variables and environment variables with `$` retrieval.
+9. **Command Navigation:** Navigate history with up/down arrows using readline.
+
+### Limitations
+1. **Single Piping Only:** Only supports one `|` in commands.
+2. **Limited Redirection Combinations:** Cannot combine complex redirection patterns with pipes.
+3. **Limited Signal Handling:** No foreground process signal management (e.g., Ctrl+C).
+4. **Basic Background Process Management:** Only lists background processes started in the session.
+5. **Simple Variables:** Variables are basic key-value pairs without advanced data structures.
+
+
+Help taken:
+Chatgpt
