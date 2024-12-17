@@ -1,7 +1,7 @@
 # OS Shell Assignment
 
 ## Version 1
-### Features:
+### Features
 1. **External Commands:** Supports executing commands such as `ls`, `pwd`, `whoami`, `date`, `echo`, etc.
 2. **Absolute and Relative Paths:** Programs can be executed using their full paths.  
    Example: `/bin/ls` or `./my_program`
